@@ -7,8 +7,12 @@ def fetch_json(url):
     """GET data from the url and assume the response is JSON."""
 
     with urllib.request.urlopen(url) as response:
-        data = response.read()
-    return json.loads(data)
+        data = json.loads(response.read())
+    columns = ["userId", "id", "title", "completed"]
+    result = [columns]
+    for d in data:
+        result.append([d[c] for c in columns])
+    return result
 
 
 if __name__ == "__main__":
