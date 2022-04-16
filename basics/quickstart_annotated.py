@@ -1,4 +1,5 @@
 # Various functions to calculate areas
+# With doc strings and type hints
 import math
 
 
