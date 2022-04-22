@@ -1,11 +1,17 @@
 # xlslim examples of Monte Carlo Simulations
 
 import pandas as pd
+from typing import Optional
 from numpy import random, exp, sqrt, mean
 
 
 def monte_carlo_stock_price(
-    s0: float, r: float, sigma: float, mat: float, strike: float = 0.0, N=10000
+    s0: float,
+    r: float,
+    sigma: float,
+    mat: float,
+    strike: float = 0.0,
+    N: Optional[int] = 10000,
 ) -> pd.DataFrame:
     """
         s0:     current stock price
