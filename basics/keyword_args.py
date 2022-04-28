@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from typing import Optional
 
 
 def hours_between(start=None, end=None, default_period=24.0, return_minutes=False):
@@ -21,8 +22,8 @@ def hours_between(start=None, end=None, default_period=24.0, return_minutes=Fals
 
 
 def hours_between_with_hints(
-    start: datetime = None,
-    end: datetime = None,
+    start: Optional[datetime] = None,
+    end: Optional[datetime] = None,
     default_period: float = 24.0,
     return_minutes: bool = False,
 ) -> float:
