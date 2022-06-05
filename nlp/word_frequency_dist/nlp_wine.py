@@ -84,17 +84,3 @@ def get_word_freq(df:pd.DataFrame, stars_filter:int=5) -> dict:
     else:
         return dict()
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
