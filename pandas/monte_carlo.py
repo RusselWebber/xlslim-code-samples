@@ -5,7 +5,9 @@ from numpy import exp, sqrt, mean
 from numpy.random import default_rng
 
 
-def monte_carlo_stock_price(s0: float, r: float, sigma: float, mat: float, strike: float = 0.0, N=10000) -> pd.DataFrame:
+def monte_carlo_stock_price(
+    s0: float, r: float, sigma: float, mat: float, strike: float = 0.0, N: int = 10000,
+) -> pd.DataFrame:
     """
         s0:     current stock price
         r:      interest rate for discounting
