@@ -51,12 +51,12 @@ if __name__ == "__main__":
 
     for i in array_counter(stop, updates_per_second):
         print(i)
+        print(array_sum(i))
 
     # This helper function is needed to test the async generator functions
     async def async_test(stop, updates_per_second):
         async for i in async_counter(stop, updates_per_second):
             print(i)
-            print(array_sum(i))
 
         async for i in async_array_counter(stop, updates_per_second):
             print(i)
