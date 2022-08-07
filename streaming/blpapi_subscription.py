@@ -1,9 +1,10 @@
 # The blpapi package is installable using pip, see https://www.bloomberg.com/professional/support/api-library/
 # The Bloomberg samples are downloadable from https://www.bloomberg.com/professional/support/api-library/
-# This code is based on the Blooomberg example SubscriptionExample.py in examples\demoapps
+# This code is based on the Blooomberg example SubscriptionExample.py in examples\demoapps in the downloaded Bloomberg samples
 
 import time
 import logging
+import datetime
 
 from argparse import ArgumentParser, RawTextHelpFormatter
 from collections import defaultdict
@@ -205,6 +206,12 @@ def show_bloomberg_float(d: Dict, topic: str, field: str) -> float:
     return d.get(topic, {}).get(field, 0.0)
 
 
+def show_bloomberg_date_or_time(d: Dict, topic: str, field: str) -> str:
+    """Some fields flip between time and date."""
+    field_value = d.get(topic, {}).get(field)
+    return field_value.isoformat() if field_value else ""
+
+
 def show_bloomberg_data(
     d: Dict,
     topics: List[str],
@@ -223,7 +230,13 @@ def show_bloomberg_data(
             row.append(topic)
         td = d.get(topic, {})
         for field in fields:
-            row.append(td.get(field))
+            field_value = td.get(field)
+            if isinstance(
+                field_value, (datetime.time, datetime.datetime, datetime.date)
+            ):
+                # To format fields that flip between time and date
+                field_value = field_value.isoformat()
+            row.append(field_value)
         rows.append(row)
 
     return rows
@@ -231,11 +244,11 @@ def show_bloomberg_data(
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    topics = ["EURUSD Curncy"]
-    fields = ["BID"]
-    interval = 10
+    topics = ["EURUSD Curncy", "XBTUSD BGN Curncy"]
+    fields = ["BID", "LAST_UPDATE_BID_RT"]
+    interval = 5
     for d in bloomberg_subscribe(topics, fields, interval=10):
-        print(show_bloomberg_data(d, "EURUSD Curncy", "BID"))
+        print(show_bloomberg_data(d, topics, fields))
 
 __copyright__ = """
 Copyright 2021, Bloomberg Finance L.P.
