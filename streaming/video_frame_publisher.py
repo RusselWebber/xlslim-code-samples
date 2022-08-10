@@ -1,3 +1,4 @@
+# The code used to generate the numpy arrays used as video frames for the Charlie Chaplin demo.
 import cv2
 import asyncio
 import logging
@@ -7,8 +8,6 @@ from contextlib import closing
 from aiokafka import AIOKafkaProducer
 
 LOG = logging.getLogger(__name__)
-
-Video_FILE = r"C:\Users\russe\Downloads\Y2Mate.is - Best of Charlie Chaplin silent comedy-KHUMoKnlxUc-480p-1658397579222.mp4"
 
 
 def get_gray_frames(filename):
@@ -31,13 +30,13 @@ def get_gray_frames(filename):
     video.release()
 
 
-async def send():
+async def send(video_file):
     producer = AIOKafkaProducer(bootstrap_servers="localhost:9092")
     # Get cluster layout and initial topic/partition leadership information
     await producer.start()
     try:
         # Produce message
-        for f in get_gray_frames(Video_FILE):
+        for f in get_gray_frames(video_file):
             # Convert from array to bytes
             with closing(BytesIO()) as np_bytes:
                 np.save(np_bytes, f, allow_pickle=False)
@@ -51,4 +50,5 @@ async def send():
 
 if __name__ == "__main__":
     logging.basicConfig()
-    asyncio.run(send())
+    video_file = r"C:\Users\russe\Downloads\Best of Charlie Chaplin silent comedy.mp4"
+    asyncio.run(send(video_file))

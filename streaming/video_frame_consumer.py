@@ -1,3 +1,4 @@
+# The code used to subscribe to numpy arrays in Kafka, as used in the Charlie Chaplin demo.
 import asyncio
 import logging
 import numpy as np
@@ -9,7 +10,7 @@ LOG = logging.getLogger(__name__)
 
 
 async def kafka_topic_subscription(topic: str, server: str, fps: str) -> np.ndarray:
-    """Subscribe to data from a Kafka topic"""
+    """Subscribe to a numpy array from a Kafka topic"""
     consumer = AIOKafkaConsumer(
         topic, bootstrap_servers=server, auto_offset_reset="earliest"
     )
