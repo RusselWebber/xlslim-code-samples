@@ -1,7 +1,13 @@
 # The blpapi package is installable using pip, see https://www.bloomberg.com/professional/support/api-library/
 # The Bloomberg samples are downloadable from https://www.bloomberg.com/professional/support/api-library/
 # This code is based on the Blooomberg example SubscriptionExample.py in examples\demoapps in the downloaded Bloomberg samples
-
+#
+# This code does require a Bloomberg terminal to be logged in on the same PC
+#
+# I would not regard this code as production ready, although it is based on Bloomberg's own samples
+# better handling and reporting of failures, disconnects, etc is needed. These should also flow back to Excel, not
+# just the logs
+#
 import time
 import logging
 import datetime
@@ -164,13 +170,14 @@ def parseDummyCmdLine(topics, fields, interval):
 def bloomberg_subscribe(
     topics: List[str], fields: List[str], interval: Optional[int] = None
 ) -> Dict:
+    """Subscribe to Bloomberg market data. 
+    
+    topics: BBG tickers e.g. AAPL US Equity
+    fields: BBG fields (use FLDS to check they are realtime fields) e.g. BID, ASK
+    interval: time in seconds intervalize the subscriptions, 0 for true realtime"""
 
     topics = list(topics)
     fields = list(fields)
-
-    LOG.info(f"topics={topics}")
-    LOG.info(f"fields={fields}")
-    LOG.info(f"interval={interval}")
 
     options = parseDummyCmdLine(topics, fields, interval)
 
@@ -203,11 +210,13 @@ def bloomberg_subscribe(
 
 
 def show_bloomberg_float(d: Dict, topic: str, field: str) -> float:
+    """Display a Bloomberg float field."""
     return d.get(topic, {}).get(field, 0.0)
 
 
 def show_bloomberg_date_or_time(d: Dict, topic: str, field: str) -> str:
-    """Some fields flip between time and date."""
+    """Display a Bloomberg date or time field. 
+    Some fields flip between time and date."""
     field_value = d.get(topic, {}).get(field)
     return field_value.isoformat() if field_value else ""
 
@@ -219,6 +228,7 @@ def show_bloomberg_data(
     show_topics: bool = True,
     show_fields: bool = True,
 ) -> List[Any]:
+    """Display all the Bloomberg data in a table."""
     rows = []
     if show_fields:
         row = [""]
