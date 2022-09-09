@@ -1,1 +1,44 @@
 # xlslim-code-samples
+
+This repo contains working examples showing how to use Python in Excel.
+
+Specific examples are:
+
+## Basics
+* Calling a Python function from Excel
+* Using type hints
+* Passing a dictionary
+* Using optional arguments
+* Reading a csv into Excel using Python
+* Fetching JSON data from the web and showing this in Excel
+* Manipulating data using SQLite and showing the results in Excel
+* Calling VBA and other macro functions from Python
+
+## Imports
+* Controlling which Python functions are imported into Excel
+* Adding additional paths to the Python module search path
+
+## NLP
+* Performaing nlp with Python and Excel
+
+## numpy
+* Passing numpy arrays from Excel to Python functions
+* Cacheing numpy arrays returned from Python
+
+## pandas
+* Passing pandas series and dataframes from Excel to Python functions
+* Cacheing pandas series and dataframes returned from Python
+* Calling a Python Monte Carlo option pricer from Excel
+* Reading prices from Yahoo Finance into Excel
+* Using Python sklearn to perform Principal Components Analysis of Index Prices
+
+## Streaming
+* Streaming data from Bloomberg into Excel using Python
+* Streaming data from IEX into Excel using Python
+* Streaming data from Kafka into Excel using Python
+* Streaming numpy arrays from Kafa into Excel using Python
+
+## VBA
+* Using Python as an Excel replacement. 
+* Loading csv data into Excel using PowerQuery.
+* Using Python and pywin32 COM to create a pivot table.
