@@ -2,7 +2,7 @@
 
 This repo contains working examples showing how the xlSlim Excel add-in enables you to use Python in Excel.
 
-See https://xlslim.com
+See https://russelwebber.github.io/xlslim-docs/html/index.html and https://xlslim.com
 
 Specific examples are:
 
