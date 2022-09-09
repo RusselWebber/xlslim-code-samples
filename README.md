@@ -1,6 +1,8 @@
 # xlslim-code-samples
 
-This repo contains working examples showing how to use Python in Excel.
+This repo contains working examples showing how the xlSlim Excel add-in enables you to use Python in Excel.
+
+See https://xlslim.com
 
 Specific examples are:
 
