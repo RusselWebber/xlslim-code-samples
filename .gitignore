@@ -1,3 +1,7 @@
 xlslimsamples.wpr
 xlslimsamples.wpu
-streaming/__pycache__/
+__pycache__/
+*.py[cod]
+.vs/
+.idea/
+

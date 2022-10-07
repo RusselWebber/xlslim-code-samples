@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 
 def create_person_dict(first_name: str, last_name: str, age: int) -> Dict:
@@ -8,16 +8,14 @@ def create_person_dict(first_name: str, last_name: str, age: int) -> Dict:
 
 def describe(p: Dict) -> str:
     """Returns a string describing the person in the dictionary."""
-    return f"{p.get('first_name')} {p.get('last_name')} is {p.get('age')} years old."
-
-
-def average_age(first_person: Dict, second_person: Dict, third_person: Dict) -> float:
-    """Returns the average age of three people."""
     return (
-        first_person.get("age", 0)
-        + second_person.get("age", 0)
-        + third_person.get("age", 0)
-    ) / 3.0
+        f"{p.get('first_name')} {p.get('last_name')} is {p.get('age'):.0f} years old."
+    )
+
+
+def average_age(people: List[Dict]) -> float:
+    """Returns the average age of the people."""
+    return sum((p.get("age") for p in people)) / len(people)
 
 
 if __name__ == "__main__":

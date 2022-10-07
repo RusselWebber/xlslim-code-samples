@@ -15,7 +15,7 @@ def create_person(first_name: str, last_name: str, age: int) -> Person:
 
 def describe(p: Person) -> str:
     """Returns a string describing the person."""
-    return f"{p.first_name} {p.last_name} is {p.age} years old."
+    return f"{p.first_name} {p.last_name} is {p.age:.0f} years old."
 
 
 def average_age(people: List[Person]) -> float:
