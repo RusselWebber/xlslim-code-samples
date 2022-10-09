@@ -76,7 +76,7 @@ class VolatilityCurve:
 
     def __init__(self, expiries: List[datetime], volatilties: List[float]):
         if len(expiries) != len(volatilties):
-            raise ValueError("The lengths of the expiries and volatilties must match.")
+            raise ValueError("The lengths of the expiries and volatilities must match.")
         self._vol_curve = dict(zip(expiries, volatilties))
 
     def __getitem__(self, key: str):
