@@ -241,6 +241,8 @@ def bsm_option_calculator(
                 + (net_r) * spot * -delta
                 + risk_free_rate * disc_strike * cdf_neg_d2
             )
+        else:
+            raise ValueError(f"Unknown option type {opt.option_type}")
         gamma = carry_pdf_d1 / (spot * vol_sqrt_t) * spot**2.0 / 100.0
         vega = spot_carry_pdf_d1 * sqrt_t / 100.0
         theta = theta / 365.0  # One day theta)
