@@ -4,12 +4,12 @@ from typing import Optional
 
 def hours_between(start=None, end=None, default_period=24.0, return_minutes=False):
     """A simple function to show the hours between two datetimes.
-    
-    start - optional - the start datetime that defaults to now. 
-    end - optional - the end datetime that defaults to 24 hours after the start. 
-    default_period - optional - the default number of hours to add to start if end is not supplied. 
-    return_minutes - optional - return the result in hours rather than minutes. 
-    
+
+    start - optional - the start datetime that defaults to now.
+    end - optional - the end datetime that defaults to 24 hours after the start.
+    default_period - optional - the default number of hours to add to start if end is not supplied.
+    return_minutes - optional - return the result in hours rather than minutes.
+
     """
     if start is None:
         start = datetime.now()
@@ -24,16 +24,16 @@ def hours_between(start=None, end=None, default_period=24.0, return_minutes=Fals
 def hours_between_with_hints(
     start: Optional[datetime] = None,
     end: Optional[datetime] = None,
-    default_period: float = 24.0,
-    return_minutes: bool = False,
+    default_period: Optional[float] = 24.0,
+    return_minutes: Optional[bool] = False,
 ) -> float:
     """A simple function to show the hours between two datetimes.
-    
-    start - optional - the start datetime that defaults to now. 
-    end - optional - the end datetime that defaults to 24 hours after the start. 
-    default_period - optional - the default number of hours to add to start if end is not supplied. 
-    return_minutes - optional - return the result in hours rather than minutes. 
-    
+
+    start - optional - the start datetime that defaults to now.
+    end - optional - the end datetime that defaults to 24 hours after the start.
+    default_period - optional - the default number of hours to add to start if end is not supplied.
+    return_minutes - optional - return the result in hours rather than minutes.
+
     """
     return hours_between(start, end, default_period, return_minutes)
 

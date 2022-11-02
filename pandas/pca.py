@@ -1,13 +1,13 @@
 # example of performing pca on historical prices of indices
 
-from typing import List
+from typing import List, Optional
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 
-def pca(prices: List[pd.DataFrame], num_comp: int = -1) -> np.ndarray:
+def pca(prices: List[pd.DataFrame], num_comp: Optional[int] = -1) -> np.ndarray:
     """
     prices: list of pandas dataframes extracted using yfinance historical data prices (assumes prices are for the same dates)
     num_comp: int number of components to keep, if -1 then all components are kept

@@ -1,10 +1,13 @@
 import numpy as np
 from numpy.linalg import inv
-from typing import List
+from typing import List, Optional
 
 
 def create_random_array(
-    minimum: int = 0, maximum: int = 100, rows: int = 1, columns: int = 1
+    minimum: Optional[int] = 0,
+    maximum: Optional[int] = 100,
+    rows: Optional[int] = 1,
+    columns: Optional[int] = 1,
 ) -> np.ndarray:
     """Create a matrix of random integers between minimum and maximum with x rows and y columns."""
     return np.random.randint(minimum, maximum, size=(rows, columns))

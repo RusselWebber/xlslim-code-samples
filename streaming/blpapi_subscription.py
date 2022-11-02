@@ -170,8 +170,8 @@ def parseDummyCmdLine(topics, fields, interval):
 def bloomberg_subscribe(
     topics: List[str], fields: List[str], interval: Optional[int] = None
 ) -> Dict:
-    """Subscribe to Bloomberg market data. 
-    
+    """Subscribe to Bloomberg market data.
+
     topics: BBG tickers e.g. AAPL US Equity
     fields: BBG fields (use FLDS to check they are realtime fields) e.g. BID, ASK
     interval: time in seconds intervalize the subscriptions, 0 for true realtime"""
@@ -215,7 +215,7 @@ def show_bloomberg_float(d: Dict, topic: str, field: str) -> float:
 
 
 def show_bloomberg_date_or_time(d: Dict, topic: str, field: str) -> str:
-    """Display a Bloomberg date or time field. 
+    """Display a Bloomberg date or time field.
     Some fields flip between time and date."""
     field_value = d.get(topic, {}).get(field)
     return field_value.isoformat() if field_value else ""
@@ -225,8 +225,8 @@ def show_bloomberg_data(
     d: Dict,
     topics: List[str],
     fields: List[str],
-    show_topics: bool = True,
-    show_fields: bool = True,
+    show_topics: Optional[bool] = True,
+    show_fields: Optional[bool] = True,
 ) -> List[Any]:
     """Display all the Bloomberg data in a table."""
     rows = []
