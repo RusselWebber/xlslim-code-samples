@@ -225,7 +225,7 @@ def bsm_option_calculator(
         spot_carry_pdf_d1 = spot * carry_pdf_d1
         disc_strike = opt.strike * df
 
-        if opt.option_type == OptionType.CALL:
+        if opt.option_type.name == "CALL":
             delta = carry * cdf_d1
             value = spot * delta - disc_strike * cdf_d2
             theta = (
@@ -233,7 +233,7 @@ def bsm_option_calculator(
                 - (net_r) * spot * delta
                 - risk_free_rate * disc_strike * cdf_d2
             )
-        elif opt.option_type == OptionType.PUT:
+        elif opt.option_type.name == "PUT":
             delta = -carry * cdf_neg_d1
             value = disc_strike * cdf_neg_d2 - spot * -delta
             theta = (
