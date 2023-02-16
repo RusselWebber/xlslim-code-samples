@@ -2,7 +2,7 @@
 
 This repo contains working examples showing how the xlSlim Excel add-in enables you to use Python in Excel.
 
-See https://russelwebber.github.io/xlslim-docs/html/index.html and https://xlslim.com
+See https://russelwebber.github.io/xlslim-docs/html/index.html and https://www.xlslim.com
 
 Specific examples are:
 
@@ -19,6 +19,11 @@ Specific examples are:
 ## Imports
 * Controlling which Python functions are imported into Excel
 * Adding additional paths to the Python module search path
+
+## Remote Imports
+* Importing modules from GitHub and BitBucket
+* Importing a module from a Gist
+* Importing code from a remote ZIP archive
 
 ## NLP
 * Performaing nlp with Python and Excel
