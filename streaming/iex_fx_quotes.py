@@ -1,3 +1,5 @@
+# 2023-03-22 - This code is no longer working, it looks like IEX do not offer their sandbox environment anymore.
+
 # IEX offers financial data via their API
 # The pyEX package wraps the API
 import datetime
