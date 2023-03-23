@@ -19,6 +19,7 @@ Specific examples are:
 ## Imports
 * Controlling which Python functions are imported into Excel
 * Adding additional paths to the Python module search path
+* Dynamic imports, creating modules and functions from text in Excel
 
 ## Remote Imports
 * Importing modules from GitHub and BitBucket
