@@ -50,6 +50,7 @@ Specific examples are:
 * Using Python as an Excel replacement. 
 * Loading csv data into Excel using PowerQuery.
 * Using Python and pywin32 COM to create a pivot table.
+* Adding items to the context and ribbon menus
 
 ## Finance
 * Using xlSlim to run scenario analysis for equity index options. This example shows how data classes and dictionaries can be used to structure code neatly.
