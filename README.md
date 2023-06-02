@@ -7,6 +7,7 @@ See https://russelwebber.github.io/xlslim-docs/html/index.html and https://www.x
 Specific examples are:
 
 ## Basics
+* Interactive mode where Excel mimics a Jupyter notebook
 * Calling a Python function from Excel
 * Using type hints
 * Passing a dictionary
