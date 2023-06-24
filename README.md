@@ -35,6 +35,7 @@ Specific examples are:
 * Cacheing numpy arrays returned from Python
 
 ## pandas
+* Using interactive mode to read data from csv, pivot in pandas, and export as PDF
 * Passing pandas series and dataframes from Excel to Python functions
 * Cacheing pandas series and dataframes returned from Python
 * Calling a Python Monte Carlo option pricer from Excel
