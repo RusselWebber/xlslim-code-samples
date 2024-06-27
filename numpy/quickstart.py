@@ -49,8 +49,38 @@ def add_two_arrays(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """Add two arrays."""
     return a + b
 
+def create_random_row_vector(
+    minimum: Optional[int] = 0,
+    maximum: Optional[int] = 100,
+    columns: Optional[int] = 1,
+) -> np.ndarray:
+    """Create a vector of random integers between minimum and maximum with x rows and y columns."""
+    return np.random.randint(minimum, maximum, size=(1, columns))
+
+def create_random_column_vector(
+    minimum: Optional[int] = 0,
+    maximum: Optional[int] = 100,
+    rows: Optional[int] = 1,
+) -> np.ndarray:
+    """Create a vector of random integers between minimum and maximum with x rows and y columns."""
+    return np.random.randint(minimum, maximum, size=(rows, 1))
+
+def create_random_vector(
+    minimum: Optional[int] = 0,
+    maximum: Optional[int] = 100,
+    n: Optional[int] = 1,
+) -> np.ndarray:
+    """Create a vector of random integers between minimum and maximum with x rows and y columns."""
+    return np.random.randint(minimum, maximum, n)
+
 
 if __name__ == "__main__":
     a = create_random_array(rows=10, columns=10)
     a_inv = invert_array(a)
     print(echo_array(a_inv))
+    b =  create_random_row_vector(columns=3)
+    print(b)
+    c =  create_random_column_vector(rows=3)
+    print(c)
+    d = create_random_vector(n=5)
+    print(d)
