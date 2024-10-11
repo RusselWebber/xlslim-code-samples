@@ -56,3 +56,6 @@ Specific examples are:
 
 ## Finance
 * Using xlSlim to run scenario analysis for equity index options. This example shows how data classes and dictionaries can be used to structure code neatly.
+
+## DuckDB
+* Using DuckDB to query csv, json and Parquet files.
