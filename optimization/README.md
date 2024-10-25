@@ -1,0 +1,2 @@
+The Production-Mix-in-Python using xlSlim.xlsx sheet is based on the blog post https://www.solvermax.com/blog/python-embedded-in-excel-first-impressions by Solver Max
+In the blog post they show how Microsoft's Python in Excel functionality can be used to solve an optimization model in Excel using a Python library. The Production-Mix-in-Python using xlSlim.xlsx sheet shows how the same functionality can be achieved using xlSlim.
